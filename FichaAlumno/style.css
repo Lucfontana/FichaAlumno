@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap');
+
+:root {
+    ---colorNav: rgb(51, 75, 99);
+    ---colorNForm: rgb(142, 168, 195);
+    ---colorBody: rgb(159, 186, 213);
+    ---fontBody: 'Roboto Condensed', sans-serif;
+    ---fontTitle: 'Special Gothic Expanded One', sans-serif;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(---colorBody);
+    font-family: var(---fontBody);
+}
+
+h1 {
+    text-decoration: underline;
+    background-color: var(---colorNav);
+    font-family: var(---fontTitle);
+    color: rgb(190, 194, 194);
+    padding: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 1rem;
+    height: fit; 
+    width: 300px;
+    background-color: var(---colorNForm);
+}
+
+label {
+    padding: 1rem 0 0.5rem 0;
+}
+
+#envFormulario {
+    margin: 1rem 0 0 0;
+}
+
+
+#mensaje {
+    padding: 10px;
+    margin: 20px ;
+    margin-left: 40px;
+    text-align: center;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+#mensaje:hover {
+    background-color: rgba(0, 0, 0, 0.103);
+    transition: 1s;
+}
+
+
+#envFormulario {
+    padding: 10px;
+    background-color: rgb(79, 139, 252);
+    font-size: 17px;
+    margin-left: 36%;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+#envFormulario:hover {
+    scale: 1.1;
+    color: aliceblue;
+    background-color: rgb(45, 102, 207);
+    transition: 1s;
+}
+
+.flex{
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.respuesta {
+    padding: 20px;
+    margin-left: 10px;
+}
