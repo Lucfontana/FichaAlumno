@@ -21,6 +21,11 @@ event.preventDefault();
      const ciudadR = document.getElementById("ciudadResp");
      const telResp = document.getElementById("telResp");
      
+     //VERIFICACION DE REGEX
+     //Al menos una mayuscula, un caracter especial y 1 minuscula
+     //Lo unico malo es que lo sigue en orden, tiene que empezar en 
+     //Mayuscula y despues la minuscula
+     const Regex = RegExp("[A-Z]+[a-z]+");
 
      // Validaciones
   if (contrasena != repcontrasena) {
@@ -44,7 +49,14 @@ event.preventDefault();
         alert("Por favor, completa todos los campos.");
         mensaje.textContent="Por favor, completa todos los campos.";
         return;
+    //A continuacion, viene la validación del regex, esta se fija si NO
+    //Se cumple la condición del regex y tira mensaje de error
+    } else if (!(Regex.test(contrasena))){
+        alert("Su contraseña debe tener al menos una mayuscula seguido de una minuscula");
+        mensaje.textContent="Su contraseña debe tener al menos una mayuscula seguido de una minuscula";
+        return;
     } else {
+        //Mostrar respuestas
         nameR.textContent = "Nombre del alumno: " + nombre;
         apellidoR.textContent = "Apellido del alumno: " + apellido;
         emailR.textContent = "Email del alumno: " + email;
@@ -52,8 +64,7 @@ event.preventDefault();
         fnacR.textContent = "Fecha de nacimiento: " + fnac;
         ciudadR.textContent = "Ciudada del alumno: " + ciudad;
         telResp.textContent = "Telefono del alumno: " + tel;
-        mensaje.textContent = "";
-
+        mensaje.textContent = ""; //El mensaje se error se pone vacío pq todo funciona bien
     }
  {
     // Mostrar respuestas
@@ -69,32 +80,3 @@ function es_segura(contrasena, repcontrasena){
    /^/
 }
  
-/*const envFormulario = document.getElementById("envFormulario");
-
-const nameR = toString(document.getElementById("nameResp"));
-const apellidoR = toString(document.getElementById("ApellidoResp"));
-const emailR = document.getElementById("emailResp");
-const fnacR = document.getElementById("fnacResp");
-const ciudadR = document.getElementById("ciudadResp");
-const telResp = Number(document.getElementById("telR"));
-
-envFormulario.addEventListener("submit", function() {
-    const nombre = toString(document.getElementById("nombre"));
-    const apellido = toString(document.getElementById("apellido"));
-    const email = document.getElementById("email");
-    const fnac = document.getElementById("fnac");
-    const ciudad = document.getElementById("ciudad");
-    const tel = Number(document.getElementById("tel"));
-
-    if (nombre.length >= 30 || nombre.length < 10) {
-        alert("El nombre ingresado debe tener entre 10 y 30 carácteres");
-        return;
-    }
-    if (length(apellido) >= 30 || length(apellido) < 11) {
-        alert("El apellido ingresado debe tener entre 10 y 30 carácteres");
-    }
-
-    event.preventDefault();
-});
-
-*/
